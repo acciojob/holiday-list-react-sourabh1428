@@ -3,6 +3,9 @@ import React, { useState, useEffect } from "react";
 import './../styles/App.css';
 
 const App = () => {
+
+
+
     const cityList = [{ name: 'Goa', country: 'India' },
     { name: 'Amsterdam', country: 'Netherlands' },
     { name: 'New York', country: 'USA' },
@@ -32,12 +35,22 @@ const App = () => {
     { name: 'Mount Abu', country: 'India' },
     { name: 'Tirupati', country: 'India' },
     ]
-    
+
+    let ans=cityList.filter((e)=>e.country=='India');
+    console.log(ans);
+    let[data,setData]=useState(ans);    
   return (
     <div id="main">
                {/* Do not remove the main div */}
+            <ul>
+              {
+              data.map((e,i)=>{return(
+              <li key={'location'+i}>{e.name}</li>
+              )})
+               }
+            </ul>
     </div>
   )
 }
 
-export default App
+export default App;
