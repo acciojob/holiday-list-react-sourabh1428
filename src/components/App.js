@@ -42,13 +42,13 @@ const App = () => {
   return (
     <div id="main">
                {/* Do not remove the main div */}
-            <ul>
+            <ol>
               {
               data.map((e,i)=>{return(
               <li key={'location'+i}>{e.name}</li>
               )})
                }
-            </ul>
+            </ol>
     </div>
   )
 }
